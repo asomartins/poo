@@ -8,10 +8,10 @@ public class Circulo {
     }
 
     public double calcularArea() {
-        return 3.14 * raio * raio;
+        return 3.14 * this.raio * this.raio;
     }
 
     public double calcularCircunferencia() {
-        return 2 * 3.14 * raio;
+        return 2 * 3.14 * this.raio;
     }
 }

@@ -10,11 +10,11 @@ public class Retangulo {
     }
 
     public double calcularArea() {
-        return largura * altura;
+        return this.largura * this.altura;
     }
 
     public double calcularPerimetro() {
-        return 2 * (largura + altura);
+        return 2 * (this.largura + this.altura);
     }
 
 }

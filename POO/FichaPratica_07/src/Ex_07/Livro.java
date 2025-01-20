@@ -1,11 +1,11 @@
 package Ex_07;
 
 public class Livro {
-    String titulo;
-    String autor;
-    String categoria;
-    int numeroDePaginas;
-    String isbn;
+    private String titulo;
+    private String autor;
+    private String categoria;
+    private int numeroDePaginas;
+    private String isbn;
 
     public Livro(String titulo, String autor, String categoria, int numeroDePaginas, String isbn) {
         this.titulo = titulo;
@@ -20,6 +20,6 @@ public class Livro {
         System.out.println("Autor: "+autor);
         System.out.println("Categoria: "+categoria);
         System.out.println("Numero de Paginas: "+numeroDePaginas);
-        System.out.println("ISBN: "+isbn);
+        System.out.println("ISBN: "+isbn+"\n");
     }
 }

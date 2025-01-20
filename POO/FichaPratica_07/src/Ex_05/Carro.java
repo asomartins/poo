@@ -1,9 +1,9 @@
 package Ex_05;
 
 public class Carro {
-    String marca;
-    String modelo;
-    int anoDeFabricacao;
+    private String marca;
+    private String modelo;
+    private int anoDeFabricacao;
 
     public Carro(String marca, String modelo, int anoDeFabricacao) {
         this.marca = marca;
