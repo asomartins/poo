@@ -1,116 +1,93 @@
 package Ex_01;
 
-import Ex_05.TipoCombustivel;
-
 public class Carro {
+
+//Atributos
+
     private String marca;
     private String modelo;
     private int ano;
     private int potencia;
-    private double cilindrada;
-    private TipoCombustivel tipoCombustivel;
-    private double consumo;
+    private int cilindrada;
+    TipoCombustivel tipoCombustivel;
+    private double consumo100;
 
-    public Carro(String marca, String modelo, int ano, int potencia, double cilindrada, double consumo, TipoCombustivel tipoCombustivel) {
+    //Construtor
+
+    public Carro(String marca, String modelo, int ano, int potencia, int cilindrada, TipoCombustivel tipoCombustivel, double consumo100) {
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
         this.potencia = potencia;
         this.cilindrada = cilindrada;
-        this.consumo = consumo;
         this.tipoCombustivel = tipoCombustivel;
+        this.consumo100 = consumo100;
     }
 
     public String getMarca() {
         return marca;
     }
 
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-
-    public int getAno() {
-        return ano;
-    }
-
-    public void setAno(int ano) {
-        this.ano = ano;
-    }
-
-    public int getPotencia() {
-        return potencia;
-    }
-
-    public void setPotencia(int potencia) {
-        this.potencia = potencia;
-    }
-
-    public double getCilindrada() {
-        return cilindrada;
-    }
-
-    public void setCilindrada(double cilindrada) {
-        this.cilindrada = cilindrada;
-    }
-
-    public TipoCombustivel getTipoCombustivel() {
-        return tipoCombustivel;
-    }
-
-    public void setTipoCombustivel(TipoCombustivel tipoCombustivel) {
-        this.tipoCombustivel = tipoCombustivel;
-    }
-
-    public double getConsumo() {
-        return consumo;
-    }
-
-    public void setConsumo(double consumo) {
-        this.consumo = consumo;
-    }
-
-    public void ligar() {
+    public void ligar(){
         int idade = 2025 - this.ano;
 
-        if (idade > 30) {
-            if (this.tipoCombustivel.equals(TipoCombustivel.DIESEL)) {
-                System.out.println("Deita um pouco de fumo... Custa a pegar... O carro está ligado!\nVrum-vrum-vrum");
-            } else
-                System.out.println("Custa a pegar... O carro está ligado! \nVrum-vrum-vrum");
-        } else {
-            if (this.potencia < 250)
-                System.out.println("O Carro está ligado! \nVrummmmmmmmm");
-            else
-                System.out.println("O Carro está ligado! \nVRUUMMMMMMMM");
+        if(idade > 30){
+            if(this.tipoCombustivel.equals(TipoCombustivel.DIESEL)){
+                System.out.println("Deita um pouco de fumo... Custa a pegar... O carro está ligado!");
+                System.out.println("Vrum-vrum-vrum");
+            }else {
+                System.out.println("Custa a pegar... O carro está ligado!");
+                System.out.println("Vrum-vrum-vrum");
+            }
+
         }
+        if(idade <= 30){
+            if(this.potencia < 250){
+                System.out.println("O carro está ligado!");
+                System.out.println("Vrummmmmmmmmmmm");
+            }else {
+                System.out.println("O carro está ligado!");
+                System.out.println("VRUMMMMMMMM");
+            }
+
+        }
+
+
     }
 
-    public Carro corrida (Carro adversario) {
+    public Carro corrida(Carro adversario){
 
-        if (this.potencia > adversario.potencia) {
+        if(this.potencia > adversario.potencia){
             return this;
         } else if (this.potencia < adversario.potencia) {
             return adversario;
-        } else if (this.cilindrada == adversario.cilindrada) {
-            if (this.ano > adversario.ano)
+
+        } else if (this.potencia == adversario.potencia) { //Bloco de empate de potencia
+            if(this.cilindrada > adversario.cilindrada){
                 return this;
-            else if (this.ano < adversario.ano)
+            }else if(this.cilindrada < adversario.cilindrada){
                 return adversario;
 
-    }
-        return null;
-}
+            } else if (this.cilindrada == adversario.cilindrada) {//Bloco de empate de cilindrada
+                if(this.ano > adversario.ano){
+                    return this;
+                } else if (this.ano < adversario.ano) {
+                    return adversario;
+                }
 
-    public double consumoCombustivel(double consumo) {
-        return consumo;
+            }
+
+        }
+        return null;
+
     }
+
+
+    public double consumoCombustivel(double distancia){
+        double valorConsumo = this.consumo100 * distancia;
+        return valorConsumo;
+    }
+
+
 
 }
