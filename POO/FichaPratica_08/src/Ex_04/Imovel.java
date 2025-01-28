@@ -13,76 +13,28 @@ public class Imovel {
     private int numCasasBanho;
     private double areaPiscina;
 
-    public String getRua() {
-        return rua;
-    }
-
-    public void setRua(String rua) {
-        this.rua = rua;
-    }
-
-    public String getNumeroPorta() {
-        return numeroPorta;
-    }
-
-    public void setNumeroPorta(String numeroPorta) {
-        this.numeroPorta = numeroPorta;
-    }
-
-    public String getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
-    }
-
     public TipoImovel getTipoImovel() {
         return tipoImovel;
     }
 
-    public void setTipoImovel(TipoImovel tipoImovel) {
-        this.tipoImovel = tipoImovel;
+    public String getRua() {
+        return rua;
     }
 
-    public TipoAcabamento getTipoAcabamento() {
-        return tipoAcabamento;
+    public Imovel(String rua, String numeroPorta, String cidade, TipoImovel tipoImovel, TipoAcabamento tipoAcabamento, double areaImovel, int numQuartos, int numCasasBanho, double areaPiscina) {
+        this.rua = rua;
+        this.numeroPorta = numeroPorta;
+        this.cidade = cidade;
+        this.tipoImovel = tipoImovel;
+        this.tipoAcabamento = tipoAcabamento;
+        this.areaImovel = areaImovel;
+        this.numQuartos = numQuartos;
+        this.numCasasBanho = numCasasBanho;
+        this.areaPiscina = areaPiscina;
     }
 
     public void setTipoAcabamento(TipoAcabamento tipoAcabamento) {
         this.tipoAcabamento = tipoAcabamento;
-    }
-
-    public double getAreaImovel() {
-        return areaImovel;
-    }
-
-    public void setAreaImovel(double areaImovel) {
-        this.areaImovel = areaImovel;
-    }
-
-    public int getNumQuartos() {
-        return numQuartos;
-    }
-
-    public void setNumQuartos(int numQuartos) {
-        this.numQuartos = numQuartos;
-    }
-
-    public int getNumCasasBanho() {
-        return numCasasBanho;
-    }
-
-    public void setNumCasasBanho(int numCasasBanho) {
-        this.numCasasBanho = numCasasBanho;
-    }
-
-    public double getAreaPiscina() {
-        return areaPiscina;
-    }
-
-    public void setAreaPiscina(double areaPiscina) {
-        this.areaPiscina = areaPiscina;
     }
 
     public double calcularValorImovel() {
@@ -107,6 +59,8 @@ public class Imovel {
             case USADA:
                 valorImovel = valorImovel * 0.9;
                 break;
+            case NOVA:
+                valorImovel = valorImovel;
             case NOVA_COM_ACABAMENTO:
                 valorImovel += valorImovel * 0.25;
         }
@@ -119,10 +73,6 @@ public class Imovel {
             valorImovel += this.areaPiscina * 1000;
 
         return valorImovel;
-    }
-
-    public void alterarAcabamentoImovel(TipoAcabamento novoAcabamento) {
-        this.tipoAcabamento = novoAcabamento;
     }
 
     public void imprimirDescricao() {
@@ -146,8 +96,10 @@ public class Imovel {
         } else if (this.calcularValorImovel() < outroImovel.calcularValorImovel()) {
             return outroImovel;
         } else {
-            System.out.println("Imóveis de mesmo valor");
+            System.out.println("Imóveis de mesmo valor.");
             return null;
         }
     }
+
+
 }

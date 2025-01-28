@@ -5,7 +5,7 @@ public class Conta {
     private double saldo;
     private String titular;
     private int anoAbertura = 2023;
-    private double margemEmprestimo;
+    private double margemEmprestimo = 0.9;
     private double valorDivida;
 
     public Conta(int numeroConta, double saldo, String titular) {

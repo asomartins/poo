@@ -7,6 +7,14 @@ package Ex_03;
     private double pesoAnimal;
     private String[] alimentacao;
 
+        public Animal(String especie, String nome, String paisOrigem, double pesoAnimal, String[] alimentacao) {
+            this.especie = especie;
+            this.nome = nome;
+            this.paisOrigem = paisOrigem;
+            this.pesoAnimal = pesoAnimal;
+            this.alimentacao = alimentacao;
+        }
+
         public String getNome() {
             return nome;
         }
@@ -53,11 +61,10 @@ package Ex_03;
                 if (alimento.equals(this.alimentacao[i])) {
                     this.pesoAnimal += pesoAlimento / 1000;
                     System.out.println("O animal comeu.");
-                    comeu = true;
                 }
-            }
-            if (!comeu) {
-                System.out.println("O animal recusou essa comida: "+alimento);
+                else {
+                    System.out.println("O animal recusou essa comida: "+alimento);
+                }
             }
         }
     }
