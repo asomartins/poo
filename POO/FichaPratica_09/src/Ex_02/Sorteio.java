@@ -19,7 +19,7 @@ public class Sorteio {
     }
 
     public void sortear() {
-        int indice = Math.random() * participantes.size();
-        participantes();
+//        int indice = Integer.parseInt(Math.random() * participantes.size());
+//        participantes();
     }
 }
