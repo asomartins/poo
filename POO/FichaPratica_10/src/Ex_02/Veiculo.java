@@ -1,7 +1,5 @@
 package Ex_02;
 
-import Ex_02.TipoCombustivel;
-
 public class Veiculo {
 
 //Atributos
@@ -12,18 +10,18 @@ public class Veiculo {
     private int potencia;
     private int cilindrada;
     public TipoCombustivel tipoCombustivel;
-    private double consumo100;
+    private double litros100km;
 
     //Construtor
 
-    public Veiculo(String marca, String modelo, int ano, int potencia, int cilindrada, TipoCombustivel tipoCombustivel, double consumo100) {
+    public Veiculo(String marca, String modelo, int ano, int potencia, int cilindrada, TipoCombustivel tipoCombustivel, double litros100km) {
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
         this.potencia = potencia;
         this.cilindrada = cilindrada;
         this.tipoCombustivel = tipoCombustivel;
-        this.consumo100 = consumo100;
+        this.litros100km = litros100km;
     }
 
     public String getMarca() {
@@ -85,8 +83,8 @@ public class Veiculo {
     }
 
 
-    public double consumo100(double distancia) {
-        double valorConsumo = this.consumo100 * distancia;
+    public double consumoCombustivel(double distancia) {
+        double valorConsumo = this.litros100km * (distancia/100);
         return valorConsumo;
     }
 

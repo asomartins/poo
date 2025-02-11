@@ -8,11 +8,12 @@ public class Carro extends Veiculo{
         this.quantidadePassageiros = quantidadePassageiros;
     }
 
-    public double calcularViagem(TipoCombustivel tipoCombustivel, double distancia) {
-        double consumo = this.consumo100(distancia);
-        double valorViagem = this.tipoCombustivel.precoLitro_Combustivel(consumo);
+    //Metodo para calcular o custo
+    public double calcularCusto(double distancia) {
+        TipoCombustivel tipoCombustivel = this.getTipoCombustivel();
+        double consumo = this.consumoCombustivel(distancia);
 
-        return valorViagem;
+        return this.getTipoCombustivel().precoLitro_Combustivel(consumo);
     }
 
     @Override

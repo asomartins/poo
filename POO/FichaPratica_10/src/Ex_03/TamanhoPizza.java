@@ -1,4 +1,5 @@
 package Ex_03;
 
-public class TamanhoPizza {
+public enum TamanhoPizza {
+    PEQUENA, MEDIA, GRANDE;
 }
